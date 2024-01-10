@@ -22,8 +22,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Set up Rye
-        run: curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash && source "$HOME/.rye/env"
+      #- name: Set up Rye
+        #run: curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash && source "$HOME/.rye/env"
+      - name: Install just from crates.io
+        uses: baptiste0928/cargo-install@v2
+        with:
+          crate: just
+
 
       - uses: extractions/setup-just@v1
 
