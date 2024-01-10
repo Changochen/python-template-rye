@@ -15,3 +15,8 @@ cov:
     rye run coverage run -m pytest
     rye run coverage report
     rye run coverage json
+
+push msg:
+    git add .
+    git commit -m "{{msg}}"
+    git push
